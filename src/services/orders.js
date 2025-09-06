@@ -68,14 +68,14 @@ export async function createOrder({ buyer, items, total, updateStock = false }) 
   const orderRef = doc(ordersCol); // id preasignado
 
   const orderId = await runTransaction(db, async (tx) => {
-    // Si no actualizamos stock, solo guardamos la orden
+    // guardamos la orden
     if (!updateStock) {
       const payload = buildOrder({ buyer, items: norm, total: serverTotal });
       tx.set(orderRef, payload);
       return orderRef.id;
     }
 
-    // 1) Leer todos los productos UNA sola vez
+    // 1) Leer productos 
     const productSnaps = await Promise.all(
       norm.map((it) => tx.get(doc(db, "products", it.id)))
     );

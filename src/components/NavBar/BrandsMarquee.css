@@ -1,14 +1,14 @@
 /* ===== Neon base ===== */
 .brand-icon{
-  position: relative; /* para pseudo-elementos */
+  position: relative; 
   overflow: visible;
-  will-change: transform, filter;       /* Perf */
+  will-change: transform, filter;       
   filter:
     drop-shadow(0 0 2px currentColor)
-    drop-shadow(0 0 6px currentColor);  /* halo suave por marca */
+    drop-shadow(0 0 6px currentColor);  
 }
 
-/* ===== Neon hover (más intensidad) ===== */
+/* ===== Neon hover  ===== */
 @media (hover:hover){
   .brand-icon:hover{
     filter:
@@ -22,7 +22,7 @@
   }
 }
 
-/* ===== Pulso (breathing) ===== */
+/* ===== Pulso ===== */
 @keyframes neonPulse {
   0%,100% { filter: drop-shadow(0 0 2px currentColor) drop-shadow(0 0 6px currentColor); }
   50%     { filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 10px currentColor); }
@@ -32,7 +32,7 @@
   animation-delay: calc(var(--i, 0) * .07s);
 }
 
-/* ===== Flicker leve (aleatorio) ===== */
+/* ===== Flicker leve ==== */
 @keyframes neonFlicker {
   0%, 97%, 100% { opacity: 1; }
   98% { opacity: .8; }
@@ -45,7 +45,7 @@
   animation-iteration-count: infinite, infinite;
 }
 
-/* Respeto a reduce motion: sólo deja el halo estático */
+/*  halo estático */
 @media (prefers-reduced-motion: reduce){
   .brands-wrap .brand-icon{ animation: none; }
 }
@@ -74,7 +74,7 @@
     0 0 18px currentColor;
 }
 
-/* ===== Estado activo (seleccionado) ===== */
+/* ===== Estado activo===== */
 .brand-icon[data-active="true"]{
   transform: scale(1.08);
   filter:
@@ -83,7 +83,7 @@
     drop-shadow(0 0 22px currentColor);
 }
 
-/* ===== Aislar foco en hover (mejor lectura) ===== */
+/* ===== Aislar foco en hover  ===== */
 @media (hover:hover){
   .brands-wrap:hover .brand-icon{ opacity:.55; }
   .brands-wrap:hover .brand-icon:hover{ opacity:1; }

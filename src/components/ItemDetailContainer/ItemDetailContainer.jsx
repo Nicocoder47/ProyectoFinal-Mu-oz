@@ -1,7 +1,7 @@
 // src/components/ItemDetailContainer/ItemDetailContainer.jsx
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../../services/products"; // ✅ corregido
+import { getProductById } from "../../services/products"; 
 import Loader from "../UI/Loader.jsx";
 import ItemDetail from "./ItemDetail.jsx";
 

@@ -13,7 +13,6 @@ const money = (n) =>
   }).format(n ?? 0);
 
 export default function Cart() {
-  // ⬅️ usar los nombres reales del context
   const { items, totalQty, total, clear } = useCart();
 
   // Debug.

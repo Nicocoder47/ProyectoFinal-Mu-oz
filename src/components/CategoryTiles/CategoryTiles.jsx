@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// 🔖 categorías base (puedes ampliar o modificar)
+// 🔖 categorías base 
 const CATEGORIES = [
   { slug: "computadoras", title: "Computadoras", emoji: "💻" },
   { slug: "arma-tu-pc", title: "Armá tu PC", emoji: "🛠️" },

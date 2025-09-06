@@ -3,7 +3,7 @@ import React, { useEffect, lazy, Suspense, useRef } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { CartProvider } from "./context/CartContext.jsx";
 
-// Loader simple y accesible.
+// Loader simple
 function Loader({ label = "Cargando…" }) {
   return (
     <div role="status" aria-live="polite" style={{ padding: "2rem", textAlign: "center" }}>
@@ -18,14 +18,14 @@ function Loader({ label = "Cargando…" }) {
   );
 }
 
-// Scroll al tope en cada navegación.
+// Scroll 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo({ top: 0, behavior: "auto" }); }, [pathname]);
   return null;
 }
 
-// Enfoque del contenido principal para accesibilidad.
+// Enfoque del contenido principall
 function RouteFocus() {
   const ref = useRef(null);
   const { pathname } = useLocation();

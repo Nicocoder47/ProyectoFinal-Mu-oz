@@ -7,11 +7,11 @@
   padding: 0.8rem 1rem;
   background: linear-gradient(90deg, #0b0e11, #121721);
   overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; 
 }
 
 .brands-bar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none; 
 }
 
 .brands-bar svg {

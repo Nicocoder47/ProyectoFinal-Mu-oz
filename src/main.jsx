@@ -2,10 +2,10 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 
-// 🎨 estilos globales (único import SCSS)
+// 🎨 estilos globales 
 import "./style/gs.scss";
 
-// 🚀 montar App en el div#root
+// 🚀App en el div#root
 const root = document.getElementById("root");
 if (!root) throw new Error("No se encontró #root en index.html");
 

@@ -28,7 +28,7 @@ export default function BrandsMarquee() {
     <div className="brands-wrap" aria-label="Marcas destacadas">
       <div className="brands-track">
         {items.map((name, i) => {
-          const key = "si" + name; // ejemplo: siLogitech, siRazer
+          const key = "si" + name; 
           const icon = icons[key];
           if (!icon) return null;
 

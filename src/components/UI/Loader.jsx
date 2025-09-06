@@ -1,10 +1,10 @@
 import React from "react";
 
 /**
- * Loader accesible, elegante y reutilizable.
- * @param {string} label - Texto de carga
- * @param {number} size - Tamaño del spinner en px (default 32)
- * @param {string} color - Color del borde superior del spinner
+ * Loader 
+ * @param {string} label 
+ * @param {number} size 
+ * @param {string} color 
  */
 export default function Loader({ label = "Cargando…", size = 32, color = "var(--accent)" }) {
   const spinnerStyle = {
@@ -31,7 +31,7 @@ export default function Loader({ label = "Cargando…", size = 32, color = "var(
       <span style={spinnerStyle} />
       <small style={{ color: "var(--muted)" }}>{label}</small>
 
-      {/* Animación inline para no depender de CSS externo */}
+      {/* Animación inline  */}
       <style>{`
         @keyframes spin {
           to { transform: rotate(360deg); }

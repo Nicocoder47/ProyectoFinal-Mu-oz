@@ -2,11 +2,11 @@
 export const toNumberARS = (v) => {
   if (typeof v === "number") return v;
   if (!v) return 0;
-  // borra espacios y símbolos, saca separadores de miles y cambia coma por punto
+  // borra espacios y símbolos
   const clean = String(v)
-    .replace(/[^\d.,-]/g, "")  // deja dígitos, . , -
-    .replace(/\./g, "")        // quita puntos (miles)
-    .replace(",", ".");        // coma decimal -> punto
+    .replace(/[^\d.,-]/g, "") 
+    .replace(/\./g, "")        
+    .replace(",", ".");       
   const n = Number(clean);
   return Number.isFinite(n) ? n : 0;
 };

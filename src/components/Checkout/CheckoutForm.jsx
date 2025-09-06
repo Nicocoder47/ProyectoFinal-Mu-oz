@@ -55,7 +55,7 @@ export default function CheckoutForm() {
     setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
   };
 
-  // Atajo: Ctrl/⌘ + Enter
+  // Atajo
   const onKeyDown = (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
       e.preventDefault();
@@ -92,8 +92,7 @@ export default function CheckoutForm() {
 
     setLoading(true);
     try {
-      // Estandarizá items con "quantity" para el servicio
-      const orderItems = items.map((it) => ({
+       const orderItems = items.map((it) => ({
         id: String(it.id),
         title: it.title,
         price: Number(it.price) || 0,
@@ -109,11 +108,10 @@ export default function CheckoutForm() {
         },
         items: orderItems,
         total: Number(totalPrice) || 0,
-        // createdAt lo setea el server (serverTimestamp) en orders.js
-        status: "pending",
+             status: "pending",
       };
 
-      // Descontar stock en misma transacción
+      // Descontar stock
       const id = await createOrder({ ...order, updateStock: true });
       setOrderId(id);
 
@@ -125,11 +123,11 @@ export default function CheckoutForm() {
       const msg = String(err?.message || "Hubo un problema al procesar tu compra.");
       setServerMsg(msg);
 
-      // Mapeo de errores comunes a campos
+      // Mapeo de errores 
       const e = {};
       if (/carrito vacío/i.test(msg)) e.cart = "Tu carrito está vacío.";
       if (/total inválido/i.test(msg)) e.cart = "El total no coincide. Actualizá el carrito e intentá de nuevo.";
-      if (/sin stock/i.test(msg)) e.cart = msg; // muestra el título que vino del server
+      if (/sin stock/i.test(msg)) e.cart = msg; 
       setErrors((prev) => ({ ...prev, ...e }));
     } finally {
       setLoading(false);

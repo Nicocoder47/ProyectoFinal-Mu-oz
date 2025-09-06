@@ -91,7 +91,7 @@ export default function CartWidget() {
           fontSize: ".85rem",
           lineHeight: 1,
           letterSpacing: ".2px",
-          fontFeatureSettings: "'tnum' 1, 'lnum' 1", // dígitos tabulares
+          fontFeatureSettings: "'tnum' 1, 'lnum' 1", 
           marginLeft: 6,
           boxShadow: "0 0 0 2px rgba(0,0,0,.35) inset",
         }}

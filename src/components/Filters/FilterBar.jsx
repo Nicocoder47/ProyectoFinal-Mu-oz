@@ -1,7 +1,7 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 
-/** Util: debounce simple */
+/** Util */
 function useDebouncedCallback(fn, delay = 400) {
   const t = React.useRef();
   return React.useCallback((...args) => {
@@ -39,7 +39,7 @@ export default function FilterBar({ items = [], categories = [] }) {
   const inStock = sp.get("stock") === "1";
   const sort = sp.get("sort") || "relevant";
 
-  // ——— Helpers de escritura de URL ———
+ 
   const patch = React.useCallback((obj) => {
     const next = new URLSearchParams(sp);
     Object.entries(obj).forEach(([k, v]) => {
@@ -49,7 +49,7 @@ export default function FilterBar({ items = [], categories = [] }) {
         next.set(k, Array.isArray(v) ? v.join(",") : String(v));
       }
     });
-    // reset de paginación si la tuvieras
+    // reset de paginación 
     next.delete("page");
     setSp(next, { replace: true });
   }, [sp, setSp]);
@@ -65,7 +65,7 @@ export default function FilterBar({ items = [], categories = [] }) {
 
   const clearAll = () => {
     const keep = new URLSearchParams(sp);
-    // si querés preservar la categoría de la ruta externa, podés dejar "cat"
+  
     keep.delete("q"); keep.delete("b"); keep.delete("min"); keep.delete("max");
     keep.delete("stock"); keep.delete("sort");
     setSp(keep, { replace: true });
