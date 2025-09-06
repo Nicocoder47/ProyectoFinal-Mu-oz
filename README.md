@@ -22,7 +22,7 @@ Generar órdenes en Firebase Firestore.
 🚀 Deploy
 
 El proyecto está publicado en Vercel y se puede acceder desde el siguiente enlace:
-
+https://proyecto-final-mu-oz-git-main-nicos-projects-bab0be48.vercel.app
 👉 GamingShop - Proyecto Final
 
 🛠️ Tecnologías utilizadas
